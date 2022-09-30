@@ -1,0 +1,110 @@
+@use "global";
+
+$contact-logo-width: 176px;
+$contact-background: #EAF2FD;
+
+.footer {
+    @include global.display-flex(center, center, wrap, column);
+    background: $contact-background;
+}
+
+.contact {
+    @include global.display-flex(space-between, unset, nowrap, row);
+    padding: global.$gap-conainers 0;
+    width: 90%;
+    font-size: 1rem
+}
+
+.contact__info {
+    @include global.display-flex(space-between, flex-start, wrap, row);
+    width: 40%;
+}
+
+.contact__info__logo {
+    height: auto;
+    width: $contact-logo-width;
+    margin-right: 15%;
+    margin-bottom: 1em;
+}
+
+.contact__info__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact__info__item__link {
+    color: global.$main-font-color;
+    font-family: global.$main-font;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.contact__form {
+    width: 50%;
+}
+
+.contact__form__tittle {
+    color: global.$main-font-color;
+    display: flex;
+    font-family: global.$main-font;
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: .5em;
+}
+
+.contact__form__input-container {
+    margin-bottom: 16px;
+}
+
+.input-message {
+    resize: none;
+}
+
+.contact__form__submit {
+    background: global.$main-theme-color;
+    border: none;
+    color: global.$main-background;
+    font-size: 1em;
+    padding: 1em;
+    width: 9em;
+}
+
+.copyright {
+    @include global.display-flex(center, center, unset, column);
+    background: global.$main-background;
+    color: global.$main-font-color;
+    font-family: global.$main-font;
+    line-height: 125%;
+    font-size: 1em;
+    font-weight: 500;
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
+    width: 100%;
+}
+
+@media (max-width: 550px) {
+    .contact {
+        @include global.display-flex(center, center, wrap, column);
+        gap: 3vh;
+        font-size: 1.5em;
+    }
+
+    .contact__info {
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact__info__logo {
+        margin-right: 0;
+    }
+
+    .contact__info__list {
+        text-align: center;
+    }
+
+    .contact__form {
+        width: 100%;
+    }
+}

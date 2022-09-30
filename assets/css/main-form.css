@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+.alert-main-font {
+  font-family: "Raleway", sans-serif;
+}
+
+.alert-confirm-btn {
+  background-color: #2A7AE4 !important;
+  color: #FFFFFF !important;
+  font-family: "Raleway", sans-serif;
+}
+
+.button {
+  background: #2A7AE4;
+  border: none;
+  box-shadow: 0 1px 2px #464646;
+  color: #FFFFFF;
+  font-family: "Raleway", sans-serif;
+  font-size: 1em;
+  padding: 1em;
+  text-align: center;
+  transition: 300ms;
+}
+.button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.button-secondary {
+  background: transparent;
+  border: 1px solid #2A7AE4;
+  color: #2A7AE4;
+  font-family: "Raleway", sans-serif;
+  padding: 1em;
+  text-align: center;
+  transition: 300ms;
+}
+.button-secondary:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+
+.hide-item {
+  display: none !important;
+}
+
+.input-form {
+  background: #FFFFFF;
+  border: none;
+  color: #464646;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  line-height: 150%;
+  outline: none;
+}
+
+.input-container {
+  background: #FFFFFF;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px #464646;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: "Raleway", sans-serif;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.input-container__label {
+  color: #A2A2A2;
+  margin-bottom: 0.3rem;
+  font-size: 0.8em;
+}
+
+.loading-gif-show {
+  backdrop-filter: blur(5px);
+  display: unset;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 24px;
+  }
+}
+@media (max-width: 820px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 550px) {
+  html {
+    font-size: 12px;
+  }
+}
+.main {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  background: #F5F5F5;
+  padding: 15vh 0;
+  width: 100%;
+}
+
+.main-form-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Raleway", sans-serif;
+  gap: 1.5rem;
+  min-width: 275px;
+  width: 50%;
+}
+
+.main-form {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Raleway", sans-serif;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.main-form__input {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.main-form__tittle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #464646;
+}
+
+.login {
+  padding: 2rem;
+}
+
+.login__form__input-container {
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.login__form__input {
+  font-size: 1em;
+}
+
+.form-input-valid {
+  border: 1px solid #22F81F;
+}
+
+.form__error {
+  display: none;
+}
+
+.form-input-invalid {
+  border: 1px solid #FA3434;
+}
+.form-input-invalid .form__error {
+  color: #FA3434;
+  display: block;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+}
+
+/*# sourceMappingURL=main-form.css.map */

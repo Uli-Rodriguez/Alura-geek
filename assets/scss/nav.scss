@@ -1,0 +1,109 @@
+@use "global";
+
+$navbar-search-color: #F5F5F5;
+$navbar-search-padding: .5rem;
+
+.header {
+    @include global.display-flex(center, center, nowrap, row);
+    background: global.$main-background;
+    padding: 1.5rem 0;
+    position: sticky;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.navbar__logo {
+    min-width: 100px;
+    width: 12.2%;
+    margin-right: 32px;
+}
+
+.navbar__logo__img {
+    width: 100%
+}
+
+.navbar__nav {
+    @include global.display-flex(space-between, center, nowrap, row);
+    width: 80%;
+}
+
+.navbar__nav__search {
+    align-items: center;
+    background: $navbar-search-color;
+    border-radius: 20px;
+    display: flex;
+    height: 2rem;
+    margin-right: 1rem;
+    padding: $navbar-search-padding;
+    width: 27vw;
+}
+
+.navbar__nav__search-active {
+    border: 2px solid rgba(#000000, .3);
+}
+
+.navbar__nav__search__input {
+    background: transparent;
+    border: none;
+    color: #A2A2A2;
+    font-family: global.$main-font;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: $navbar-search-padding;
+    outline: none;
+    width: 100%;
+}
+
+.navbar__nav__search__btn {
+    aspect-ratio: 1 / 1;
+    background: transparent;
+    border: none;
+    height: 100%;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.navbar__nav__link-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar__nav__link{
+    height: 100%;
+    text-decoration: none;
+}
+
+.navbar__nav__link__btn {
+    font-size: 1rem;
+    height: 100%;
+    min-width: 133px;
+    text-align: center;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 600px){
+    .navbar__nav__link-container {
+        flex-wrap: wrap;
+    }
+    .navbar__nav {
+        flex-direction: row-reverse;
+    }
+
+    .navbar__nav__search {
+        width: auto;
+    }
+
+    .navbar__nav__search__input {
+        display: none;
+    }
+}

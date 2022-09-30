@@ -1,0 +1,68 @@
+@use "global";
+
+$items-gap: 1.5rem;
+
+.main {
+    @include global.display-flex(center, center, nowrap, row);
+    background: global.$main-container-background;
+    padding: 15vh 0;
+    width: 100%;
+}
+
+.main-form-container {
+    @include global.display-flex(center, center, nowrap, column);
+    font-family: global.$main-font;
+    gap: $items-gap;
+    min-width: global.$main-form-input-width;
+    width: 50%;
+}
+
+.main-form {
+    @include global.display-flex(center, center, nowrap, column);
+    font-family: global.$main-font;
+    gap: global.$items-gap;
+    width: 100%;
+}
+
+.main-form__input {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.main-form__tittle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: global.$main-font-color;
+}
+
+.login {
+    padding: 2rem;
+}
+
+.login__form__input-container {
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
+.login__form__input {
+    font-size: 1em;
+}
+
+.form-input-valid {
+    border: 1px solid #22F81F;
+}
+
+.form__error {
+    display: none;
+ }
+
+.form-input-invalid {
+    border: 1px solid #FA3434;
+
+    .form__error {
+        color: #FA3434;
+        display: block;
+        font-family: global.$main-font;
+        font-size: 1rem;
+    }
+}

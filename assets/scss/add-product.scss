@@ -1,0 +1,67 @@
+@use "global";
+
+.add-img {
+    display: grid;
+    grid-template-columns: 50% auto 40%;
+    color: global.$main-font-color;
+}
+
+.add-img__label__drag {
+    @include global.display-flex(center, center, unset, column);
+    aspect-ratio: 1 / 1;
+    background: global.$main-background;
+    border: 4px dashed rgba($color: #000000, $alpha: .3);
+    box-sizing: border-box;
+    font-size: 1rem;
+    gap: 1rem;
+    padding: 2rem 1rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.add-img__label__drag__icon {
+    width: 10%;
+}
+
+.add-img__label__drag__text {
+    text-align: center;
+}
+
+.add-img__input {
+    display: none;
+}
+
+.add-img__p {
+    @include global.display-flex(center, center, nowrap, unset);
+    text-align: center;
+    width: 100%;
+}
+
+.add-img__label {
+    @include global.display-flex(space-evenly, stretch, unset, column);
+    box-sizing: border-box;
+}
+
+.add-img__error {
+    margin: .5rem;
+    margin-top: 1rem;
+}
+
+.add__form__input-price-container {
+    @include global.display-flex(stretch, center, nowrap, row);
+
+    &::before {
+        content: "\0024";
+        color: global.$main-font-color;
+        font-family: global.$main-font;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+}
+
+.img-saved {
+    aspect-ratio: 1/1;
+    width: 100%;
+}

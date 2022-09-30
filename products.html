@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos los productos - Alura Geek</title>
+    <link rel="icon" href="./assets/images/icon.svg">
+    <!-- SweetAlert styles -->
+    <link rel="stylesheet" href="./assets/sweetAlert/sweetAlert.css">
+    <!-- Styles (CSS with SASS) -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/nav.css">
+    <link rel="stylesheet" href="./assets/css/products.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <!-- Logo y link a menu principal / Logo and home link -->
+            <a href="index.html" class="navbar__logo">
+                <img src="./assets/images/logo.png" alt="logo" class="navbar__logo__img">
+            </a>
+            <div class="navbar__nav">
+                <!-- Search bar / barra de busqueda -->
+                <form class="navbar__nav__search">
+                    <input class="navbar__nav__search__input" placeholder="¿Qué deseas buscar?"></input>
+                    <button type="submit" class="navbar__nav__search__btn">
+                        <img src="./assets/images/search-bar-logo.svg" alt="Icono de busqueda" class="navbar__nav__search__btn__img">
+                    </button>
+                </form>
+                <!-- Links de avegación (logout e inicio) / Navigation links (logout and home) -->
+                <div class="navbar__nav__link-container">
+                    <a href="login.html" class="navbar__nav__link" data-admin="logout">
+                        <button class="navbar__nav__link__btn button-secondary">Login</button>
+                    </a>
+                    <a href="index.html" class="navbar__nav__link hide-item" data-admin="login">
+                        <button class="navbar__nav__link__btn button-secondary">Inicio</button>
+                    </a>
+                    <button class="navbar__nav__link__btn button-secondary hide-item" data-admin="login" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="products">
+            <section class="product-full products-container">
+                <img src="./assets/images/wait-img-icon.png" class="product-full__img">
+                <div class="product-full__info">
+                    <h2 class="product-full__info__tittle">Producto no encontrado</h2>
+                    <div class="product-full__info__price-container products__card__price-container">
+                        <p class="product-full__info__price products__card__price">--.--</p>
+                    </div>
+                    <p class="product-full__info__description">El producto que desea ver no fue encontrado, intente nuevamente</p>
+                </div>
+            </section>
+            <!-- All products asked / Todos los productos solicitados -->
+            <section class="products-container">
+                <div class="products-container__tittle">
+                    <h2 class="products-container__tittle__text">Productos similares</h2>
+                </div>
+                <!-- Lista de los productos / Products list -->
+                <ul class="products-container__content" id="productsList">
+                </ul>
+            </section>
+        </section>
+    </main>
+    <footer class="footer">
+        <section class="contact">
+            <!-- Links para ponerse en contacto / Some contact links -->
+            <div class="contact__info">
+                <img src="./assets/images/logo.png" alt="logo" class="contact__info__logo">
+                <ul class="contact__info__list">
+                    <li class="contact__info__item">
+                        <a href="#" class="contact__info__item__link">Quienes somos</a>
+                    </li>
+                    <li class="contact__info__item">
+                        <a href="#" class="contact__info__item__link">Política de privacidad</a>
+                    </li>
+                    <li class="contact__info__item">
+                        <a href="#" class="contact__info__item__link">Programa de fidelidad</a>
+                    </li>
+                    <li class="contact__info__item">
+                        <a href="#" class="contact__info__item__link">Nuestras Tiendas</a>
+                    </li>
+                    <li class="contact__info__item">
+                        <a href="#" class="contact__info__item__link">Quiero ser franquiciado</a>
+                    </li>
+                    <li class="contact__info__item">
+                        <a href="#" class="contact__info__item__link">Anúncie aquí</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Formulario para mandarnos un mensaje / Form to send a message to the company -->
+            <form class="contact__form">
+                <span class="contact__form__tittle">Hable con nosotros</span>
+                <!-- Caja del nombre / Name box -->
+                <div class="contact__form__input-container input-container input-validity-container">
+                    <label for="name" class="contact__form__label input-container__label">Nombre</label>
+                    <input type="text" class="contact__form__input input-form" name="userName" id="name" pattern="[\wñÑ]{1,40}" maxlength="41" required data-form_input="name">
+                    <!-- En caso de error, muestralo aca / If there is an error, show it here -->
+                    <span class="form__error"></span>
+                </div>
+                <!-- Caja del mensaje / Message box -->
+                <div class="contact__form__input-container input-container input-validity-container">
+                    <label for="name" class="contact__form__label input-container__label">Escribe tu mensaje</label>
+                    <textarea type="text" class="contact__form__input input-message input-form" name="message" rows="5" required data-form_input="message" maxlength="121"></textarea>
+                    <!-- En caso de error, muestralo aca / If there is an error, show it here -->
+                    <span class="form__error"></span>
+                </div>
+                <input type="submit" class="contact__form__submit button" value="Enviar mensaje" id="contact-submit">
+            </form>
+        </section>
+        <section class="copyright">
+            <p class="copyright__tittle">Desarrollado por Ulises Rodríguez</p>
+            <p class="copyright__date">2022</p>
+        </section>
+    </footer>
+    <script src="./assets/sweetAlert/sweetAlert.js"></script>
+    <script type="module" src="./js/form-validations/contact.js"></script>
+    <script type="module" src="./js/services/logout.js"></script>
+    <script type="module" src="./js/services/validateAdmin.js"></script>
+    <script type="module" src="./js/products/showProduct.js"></script>
+    <script type="module" src="./js/services/searchBar.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+@use "global";
+
+$banner-height: 352px;
+$banner-text-gap: 1rem;
+
+.banner {
+    @include global.display-flex(flex-end, center, nowrap, column);
+    background: url(../images/banner-image.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: global.$main-background;
+    font-family: inherit;
+    height: $banner-height;
+    width: 100%;
+}
+
+.banner__text {
+    padding-bottom: 32px;
+    width: 90%;
+    font-family: global.$main-font;
+    font-weight: 700;
+}
+
+.banner__text__tittle {
+    font-size: 2.5rem;
+    margin-bottom: $banner-text-gap;
+}
+
+.banner__text__content {
+    font-size: 1rem;
+    margin-bottom: $banner-text-gap;
+}
+
+@media (max-width: 550px) {
+    .banner {
+        height: 192px;
+    }
+}
